@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Home from 'views/Home';
+import Login from '@/views/Login';
+import apiFetch from '@/utils/apiFetch';
 
 function App() {
+  useEffect(() => {
+    // apiFetch();
+  });
+
   return (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route path="/login" component={Login} />
     </Switch>
   );
 }

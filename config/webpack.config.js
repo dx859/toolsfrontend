@@ -303,6 +303,7 @@ module.exports = function(webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling'
         }),
         ...(modules.webpackAliases || {}),
+        '@': paths.appSrc,
         '@ant-design/icons/lib/dist$': path.resolve(
           paths.appSrc,
           '..',

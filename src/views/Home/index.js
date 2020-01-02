@@ -1,17 +1,18 @@
 import React from 'react';
 import store from 'store';
 import reducer from './reducer';
-import { Button, DatePicker } from 'antd';
+import Hello from '@/components/Hello';
 
 store.injectReducer('home', reducer);
+
+const style = `
+background: #ccc
+`;
 
 const Home = () => {
   return (
     <>
-      <Button icon="search" type="primary">
-        按钮
-      </Button>
-      <DatePicker />
+      <Hello />
     </>
   );
 };
