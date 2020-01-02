@@ -17,6 +17,7 @@ const apiFetch = function(action, data = {}, opts = {}) {
           resolve(response.data.data);
         } else {
           if (showError) {
+            message.destroy();
             message.error(response.data.message || '系统繁忙，请稍后再试');
           }
           if (response.code === 10001) {
@@ -30,6 +31,7 @@ const apiFetch = function(action, data = {}, opts = {}) {
 
         const obj = e.message ? e : { message: '系统繁忙，请稍后再试' };
         if (showError) {
+          message.destroy();
           message.error(obj.message);
         }
 

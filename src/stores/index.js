@@ -1,19 +1,18 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 
 import setting from './setting';
+import user from './user';
+import { callAPIMiddleware } from '../utils/reduxUtils';
 
-const middleware = [];
+const middleware = [callAPIMiddleware];
 
 const staticReducers = {
-  setting
+  setting,
+  user
 };
 
 export default function configureStore(initialState) {
-  let store = createStore(
-    createReducer(),
-    initialState,
-    applyMiddleware(...middleware)
-  );
+  let store = createStore(createReducer(), initialState, applyMiddleware(...middleware));
 
   if (
     process.env.NODE_ENV === 'development' &&

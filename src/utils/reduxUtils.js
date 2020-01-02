@@ -16,16 +16,12 @@ export function callAPIMiddleware({ dispatch, getState }) {
     if (
       !Array.isArray(types) ||
       types.length !== 3 ||
-      !types.every(
-        type => typeof type === 'string' || typeof type === 'function'
-      )
+      !types.every(type => typeof type === 'string' || typeof type === 'function')
     ) {
       throw new Error('Expected an array of three string types.');
     }
 
-    types = types.map(type =>
-      typeof type === 'function' ? type.toString() : type
-    );
+    types = types.map(type => (typeof type === 'function' ? type.toString() : type));
 
     if (typeof callAPI !== 'function') {
       throw new Error('Expected callAPI to be a function.');
@@ -54,7 +50,6 @@ export function callAPIMiddleware({ dispatch, getState }) {
         )
       )
       .catch(error => {
-        console.log(error);
         if (failureType) {
           dispatch(
             Object.assign({}, payload, {
