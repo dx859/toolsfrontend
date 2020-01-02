@@ -1,9 +1,10 @@
 import axios from 'axios';
 import { message } from 'antd';
-import store from '@/store';
+// import store from '@/store';
 
 const apiFetch = function(action, data = {}, opts = {}) {
   const url = '/api' + action;
+
   const { showError = true } = opts;
   return new Promise((resolve, reject) => {
     axios({
