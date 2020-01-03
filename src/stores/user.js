@@ -17,6 +17,15 @@ export const getUser = () => {
   };
 };
 
+export const fetchLogout = createAction('user/fetchLogout');
+
+export const logout = () => {
+  return {
+    types: fetchLogout,
+    callAPI: () => apiFetch(api.logout)
+  };
+};
+
 export default createReducer(
   {
     isLoaded: false,
@@ -27,7 +36,7 @@ export default createReducer(
     email: ''
   },
   {
-    [setUser]: (state, action) => Object.assign(state, action.user),
+    [setUser]: (state, action) => Object.assign(state, action.user, { isLogin: true }),
     [fetchstart]: state => (state.isFetching = true),
     [fetchend]: (state, action) =>
       Object.assign(state, action.response, { isFetching: false, isLoaded: true, isLogin: true }),
@@ -35,6 +44,8 @@ export default createReducer(
       state.isFetching = false;
       state.isLoaded = true;
       state.isLogin = false;
-    }
+    },
+    [fetchLogout]: (state, action) =>
+      Object.assign(state, { isLogin: false, id: '', username: '', email: '' })
   }
 );

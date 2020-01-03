@@ -5,20 +5,12 @@ import Content from '@/views/Layout/Content';
 
 import classes from './index.less';
 
-const styleString = `
-html,body,#root {height: 100%}
-#root {
-  display: flex;
-
-}
-`;
 const Layout = () => {
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: styleString }} />
       <Sidebar className={classes.left} />
       <div className={classes.right}>
-        <Header />
+        <Header className={classes.header} />
         <Content />
       </div>
     </>

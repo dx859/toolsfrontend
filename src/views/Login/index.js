@@ -6,10 +6,8 @@ import api from '@/api';
 import classes from './index.less';
 import { useDispatch } from 'react-redux';
 import { setUser } from '@/stores/user';
-import { querystring } from '@/utils/urlUtils';
-import browserHistory from '@/browserHistory';
 
-const Login = ({ form, location }) => {
+const Login = ({ form }) => {
   const { getFieldDecorator } = form;
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
@@ -24,12 +22,6 @@ const Login = ({ form, location }) => {
             .then(data => {
               setLoading(false);
               dispatch(setUser(data));
-              let query = querystring(location.search);
-              if (query.redirect) {
-                browserHistory.push(query.redirect);
-              } else {
-                browserHistory.push('/home');
-              }
             })
             .catch(e => {
               setLoading(false);
@@ -37,7 +29,7 @@ const Login = ({ form, location }) => {
         }
       });
     },
-    [form, dispatch, location.search]
+    [form, dispatch]
   );
 
   return (

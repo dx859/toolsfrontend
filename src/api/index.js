@@ -1,4 +1,6 @@
 export default {
   login: '/auth/sign-in',
-  getUser: '/user/info'
+  logout: '/auth/logout',
+  getUser: '/user/info',
+  getMenu: '/setting/menu'
 };

@@ -4,3 +4,7 @@ export { default as CloseCircleOutline } from '@ant-design/icons/lib/outline/Clo
 export { default as UserOutline } from '@ant-design/icons/lib/outline/UserOutline';
 export { default as LockOutline } from '@ant-design/icons/lib/outline/LockOutline';
 export { default as LoadingOutline } from '@ant-design/icons/lib/outline/LoadingOutline';
+export { default as LogoutOutline } from '@ant-design/icons/lib/outline/LogoutOutline';
+export { default as MenuFoldOutline } from '@ant-design/icons/lib/outline/MenuFoldOutline';
+export { default as SolutionOutline } from '@ant-design/icons/lib/outline/SolutionOutline';
+export { default as ReadOutline } from '@ant-design/icons/lib/outline/ReadOutline';

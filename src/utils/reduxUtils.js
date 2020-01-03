@@ -9,7 +9,7 @@ export function callAPIMiddleware({ dispatch, getState }) {
       return next(action);
     }
 
-    if (typeof types === 'string') {
+    if (typeof types === 'string' || typeof types === 'function') {
       types = ['', types, ''];
     }
 
