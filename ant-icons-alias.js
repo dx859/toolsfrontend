@@ -8,3 +8,5 @@ export { default as LogoutOutline } from '@ant-design/icons/lib/outline/LogoutOu
 export { default as MenuFoldOutline } from '@ant-design/icons/lib/outline/MenuFoldOutline';
 export { default as SolutionOutline } from '@ant-design/icons/lib/outline/SolutionOutline';
 export { default as ReadOutline } from '@ant-design/icons/lib/outline/ReadOutline';
+export { default as LeftOutline } from '@ant-design/icons/lib/outline/LeftOutline';
+export { default as RightOutline } from '@ant-design/icons/lib/outline/RightOutline';
