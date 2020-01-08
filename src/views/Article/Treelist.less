@@ -1,0 +1,34 @@
+.item {
+  display: block;
+  color: #666;
+  padding: 3px 0;
+  cursor: pointer;
+  &:hover {
+    color: #222;
+    background-color: #efefef;
+  }
+}
+.active {
+  color: #222;
+  background-color: #eee;
+  .dot {
+    background-color: #222;
+  }
+}
+.dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: #999;
+  border-radius: 50%;
+  margin: 0 8px 0 4px;
+  vertical-align: 3px;
+}
+.icon {
+  font-size: 10px;
+  margin-right: 6px;
+  transition: 250ms all;
+}
+.iconClose {
+  transform: rotate(90deg);
+}

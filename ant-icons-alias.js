@@ -10,3 +10,6 @@ export { default as SolutionOutline } from '@ant-design/icons/lib/outline/Soluti
 export { default as ReadOutline } from '@ant-design/icons/lib/outline/ReadOutline';
 export { default as LeftOutline } from '@ant-design/icons/lib/outline/LeftOutline';
 export { default as RightOutline } from '@ant-design/icons/lib/outline/RightOutline';
+export { default as FolderOutline } from '@ant-design/icons/lib/outline/FolderOutline';
+export { default as FolderOpenOutline } from '@ant-design/icons/lib/outline/FolderOpenOutline';
+export { default as FileOutline } from '@ant-design/icons/lib/outline/FileOutline';

@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 
 import apiFetch from '@/utils/apiFetch';
 
@@ -28,7 +28,8 @@ const dataFetchReducer = (state, action) => {
   }
 };
 
-export function useDataApi(url, initialData, query = {}) {
+export function useDataApi({ url, initialData, initialQuery = {}, format } = {}) {
+  const [query, setQuery] = useState(initialQuery);
   const [state, dispatch] = useReducer(dataFetchReducer, {
     isLoading: false,
     isError: false,
@@ -39,6 +40,9 @@ export function useDataApi(url, initialData, query = {}) {
     dispatch({ type: 'FETCH_INIT' });
     apiFetch(url, query)
       .then(data => {
+        if (typeof format === 'function') {
+          data = format(data);
+        }
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
       })
       .catch(e => {
@@ -47,5 +51,5 @@ export function useDataApi(url, initialData, query = {}) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [url, JSON.stringify(query)]);
 
-  return { ...state };
+  return { state, setQuery };
 }
